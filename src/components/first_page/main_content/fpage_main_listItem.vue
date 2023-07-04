@@ -1,28 +1,30 @@
 <script>
 export default {
-  data() {
-    return {}
+  props: {
+    content: {
+      type: Object,
+      required: true
+    }
   }
 }
-
 </script>
 
 <template>
   <div id="fp_list_item" class="rounded flex-col">
     <div id="fp_list_item_main" class="flex items-start flex-col " style="padding: 12px 20px 0;">
       <p id="fp_list_item_detail" class="hover:text-blue-500">
-        韩镇方 | 2月前 | 前端·JavaScript·掘金金石计划
+        {{ content.author }} | {{ content.date }} | {{ content.tag }}
       </p>
       <div id="content_wrapper" class="flex-col">
-        <h1 id="fp_list_item_title" class="mb-2"> 前端正确处理“文字溢出”的思路</h1>
-        <p id="fp_list_item_content" class="mb-2">最近在项目中需要</p>
+        <h1 id="fp_list_item_title" class="mb-2"> {{ content.title }} </h1>
+        <p id="fp_list_item_content" class="w-10/12 mb-2 overflow-hidden overflow-ellipsis">{{ content.content }}</p>
         <div class="flex flex-row items-center justify-start">
           <img src="/src/assets/icon-eye.png" alt="">
-          <p class="hover:text-blue-500">浏览</p>
+          <p class="hover:text-blue-500"> {{ content.views }}</p>
           <img class="ml-5" src="/src/assets/icon-like.png" alt="">
-          <p class="hover:text-blue-500">点赞</p>
+          <p class="hover:text-blue-500"> {{ content.likes }}</p>
           <img class="ml-5" src="/src/assets/icon-comments.png" alt="">
-          <p class="hover:text-blue-500">评论</p>
+          <p class="hover:text-blue-500">{{content.comments }}</p>
         </div>
       </div>
     </div>

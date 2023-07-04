@@ -11,10 +11,13 @@
       <img src="/src/assets/icon-comments.png" alt="">
     </div>
     <div class="box content">
-      <img src="/src/assets/icon-star.png"  alt="">
+      <img src="/src/assets/icon-star.png" alt="">
     </div>
     <div class="box">
       <img src="/src/assets/icon-share.png" alt="">
+    </div>
+    <div class="box mt-20">
+      <img src="/src/assets/icon-warning.png" alt="">
     </div>
     <div class="box">
       <img src="/src/assets/icon-warning.png" alt="">

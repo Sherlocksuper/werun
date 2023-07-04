@@ -5,7 +5,7 @@ export default {
   data() {
     return {
       listHiddenSet: 1120,
-      listPartHiddenSet: 1350,
+      listPartHiddenSet: 1190,
       header_title_list_copy: []
     }
   },
@@ -56,7 +56,8 @@ a {
   height: 5rem;
   white-space: nowrap;
   position: relative;
-  color: black;
+  color: #515767;
+  margin-left: -8px;
 
   &:hover {
     color: #5fb0ff;

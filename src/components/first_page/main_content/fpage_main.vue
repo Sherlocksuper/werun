@@ -9,10 +9,6 @@ import Fpage_main_list_choose from "@/components/first_page/main_content/fpage_m
   <div class="flex-col flex">
     <hotList class="h-40"/>
     <fpage_main_list_choose class="mt-3"></fpage_main_list_choose>
-    <router-view class="bg-white"></router-view>
+    <router-view class="bg-white "></router-view>
   </div>
 </template>
-
-<style scoped>
-
-</style>

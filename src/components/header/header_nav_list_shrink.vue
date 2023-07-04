@@ -45,12 +45,9 @@ export default {
 </template>
 
 <style scoped>
+
 h1 {
   color: #5fb0ff;
-}
-
-p {
-  width: 100px;
 }
 
 #header_shrink_total {
@@ -59,7 +56,6 @@ p {
   justify-content: center;
   align-items: center;
   height: 100%;
-  width: 100px;
   position: relative;
 }
 
@@ -102,7 +98,6 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-
 
   &:hover {
     color: #5fb0ff;

@@ -1,28 +1,23 @@
-<script>
-
+<script setup>
+import Side_ad_part_1 from "./side_ad_part_1.vue";
+import Side_ad_part_2 from "@/components/first_page/side_content/side_ad_part_2.vue";
+import Side_ad_part_3 from "@/components/first_page/side_content/side_ad_part_3.vue";
+import Side_ad_part_4 from "@/components/first_page/side_content/side_ad_part_4.vue";
 </script>
 
 <template>
   <div id="side_ad_total" class="flex flex-col">
-    <h1>下午好！</h1>
-    <p>广告</p>
+    <side_ad_part_1 class="bg-white mb-5 rounded"></side_ad_part_1>
+    <side_ad_part_2 class="bg-white mb-5 rounded"></side_ad_part_2>
+    <side_ad_part_3 class="bg-white mb-5 rounded"></side_ad_part_3>
+    <side_ad_part_4></side_ad_part_4>
   </div>
 </template>
 
 <style scoped>
 #side_ad_total {
   width: 260px;
-  height: 200px;
-  border-radius: 5px;;
-  background-color: white;
-}
-
-h1, p {
-  font-size: 20px;
-  font-weight: 700;
-  color: black;
-  margin-left: 20px;
-  margin-top: 5px;
+  border-radius: 5px;
 }
 
 </style>

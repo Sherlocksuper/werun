@@ -6,16 +6,16 @@ export default {
   data() {
     return {
       pics: [
-        '/src/assets/iconm-star-.svg',
-        '/src/assets/iconm-compass.svg',
-        '/src/assets/iconm-laptop.svg',
-        '/src/assets/iconm-laptop.svg',
-        '/src/assets/iconm-android.svg',
-        '/src/assets/iconm-apple.svg',
-        '/src/assets/iconm-delivery.svg',
-        '/src/assets/iconm-tools.svg',
-        '/src/assets/iconm-star-.svg',
-        '/src/assets/iconm-book.svg',
+        '/src/assets/side_icons/icon-focus.svg',
+        '/src/assets/side_icons/icon-compass.svg',
+        '/src/assets/side_icons/icon-laptop.svg',
+        '/src/assets/side_icons/icon-laptop2.svg',
+        '/src/assets/side_icons/icon-android.svg',
+        '/src/assets/side_icons/icon-apple.svg',
+        '/src/assets/side_icons/icon-machine.svg',
+        '/src/assets/side_icons/icon-tools.svg',
+        '/src/assets/side_icons/icon-calc.svg',
+        '/src/assets/side_icons/icon-books.svg',
       ],
     }
   },
@@ -32,62 +32,61 @@ export default {
 </script>
 <template>
   <div id="side_option_total" class="flex flex-col justify-between items-center bg-white z-10 ">
-    <div id="side_option_items_total" :class="{'focused':titleItem.checked}"
-         v-for="(titleItem,index) in side_title_list"
-         @click="change_active_title(index)" class="flex justify-center items-center">
-      <router-link :to="index === 1 ?{name:'Home_Content_Command'}:{name:'HomePage_Test'}">
-        <img v-bind:src=pics[index] alt="">
-        {{ titleItem.title }}
-      </router-link>
+    <div id="item_container" class="mt-2 mb-2">
+      <div id="side_option_items_total" :class="{'focused':titleItem.checked}"
+           v-for="(titleItem,index) in side_title_list"
+           @click="change_active_title(index)" class="flex justify-center items-center">
+        <router-link :to="index === 1 ?{name:'Home_Content_Command'}:{name:'HomePage_Test'}"
+                     class="w-full h-full flex items-center text-black">
+          <img v-bind:src=pics[index] alt="" class="ml-4 mr-3 w-4">
+          {{ titleItem.title }}
+        </router-link>
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped>
+
 #side_option_total {
   height: 470px;
+  width: 180px;
   border-radius: 5px;
 }
 
 #side_option_items_total {
-  width: 160px;
+  width: 164px;
   height: 45px;
-  margin: 3px 7px;
   border-radius: 5px;
-  padding: 0 8px;
-}
+  margin: 0 8px;
 
-a {
-  width: 100%;
-  height: 100%;
-  font-size: 14px;
-  font-weight: 500;
-  text-decoration: none;
-  color: black;
-  display: flex;
-  align-items: center;
-}
+  &:hover {
+    background-color: #f7f8fa;
 
-#side_option_items_total:hover {
-  background-color: #f7f8fa;
+    & a {
+      color: #5fb0ff;
+    }
 
-  & a {
-    color: #5fb0ff;
+    & img {
+      filter: invert(56%) sepia(67%) saturate(403%) hue-rotate(171deg) brightness(101%) contrast(104%);
+    }
   }
-}
 
-#side_option_items_total.focused {
-  background-color: #eaf2ff;
+  &.focused {
+    background-color: #eaf2ff;
 
-  & a {
-    color: #5fb0ff;
+    & a {
+      color: #5fb0ff;
+    }
+
+    & img {
+      filter: invert(56%) sepia(67%) saturate(403%) hue-rotate(171deg) brightness(101%) contrast(104%);
+    }
   }
 }
 
 img {
-  width: 15px;
-  height: 15px;
-  margin-right: 10px;
-  filter: drop-shadow(0px 0px 0px #5fb0ff);
+  height: 16px;
+  width: 16px;
 }
 </style>

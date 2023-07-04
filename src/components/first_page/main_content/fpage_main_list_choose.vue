@@ -23,7 +23,6 @@ export default {
     <p id="hot_text" class="ml-9">最热</p>
   </div>
 </template>
-
 <style scoped>
 div {
   height: 45px;

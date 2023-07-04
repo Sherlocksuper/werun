@@ -15,14 +15,14 @@ export default {
   methods: {
     //判断当前的路径是否是/home/main/command
     isCommand() {
-      return this.$route.path === '/home/main/command'
+      return this.$route.path === '/home/main/command' || this.$route.path === '/home/test'
     },
   },
 };
 </script>
 <template>
-  <div class="bg-white w-full">
+  <div class="bg-white w-full flex flex-col">
     <header_nav></header_nav>
-    <side_option_top v-if="windowWidth < 1200 && isCommand()"></side_option_top>
+    <side_option_top v-if="windowWidth <= 1200 && isCommand()"></side_option_top>
   </div>
 </template>

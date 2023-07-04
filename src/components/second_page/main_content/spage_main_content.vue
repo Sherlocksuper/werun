@@ -3,7 +3,14 @@ import {mapState} from "vuex";
 
 export default {
   data() {
-    return {
+    return {}
+  },
+  props: {
+    item: {
+      type: Object,
+      default: () => {
+        return {}
+      }
     }
   },
   methods: {},
@@ -15,15 +22,17 @@ export default {
 </script>
 
 <template>
-  <div id="spage_main_content_total">
+  <div id="spage_main_content_total" class="">
     <article id="spage_main_content_article" class=" rounded  flex flex-col items-start justify-start ">
-      <h1 id="spage_main_content_title" class="article_title" :class="{'toY':windowWidth < 1140}">不会这10个Web API</h1>
+      <h1 id="spage_main_content_title" class="article_title">{{ item.title }}</h1>
       <div id="spage_main_content_detail" class="flex flex-row items-start justify-start">
-        <p class="text-gray-400">作者 时间 </p>
+        <p class="text-gray-400">{{ item.author }} {{ item.date }} </p>
         <img alt="" src="/src/assets/icon-eye.png" class="ml-5 w-5 h-5 mt-auto mb-auto">
-        <p class="text-gray-400 ml-2">阅读量</p>
+        <p class="text-gray-400 ml-2">{{ item.views }}</p>
       </div>
-      <div id="article_body"></div>
+      <div id="article_body">
+        <p>{{ item.content }}</p>
+      </div>
     </article>
   </div>
 </template>
@@ -34,7 +43,6 @@ export default {
   margin-right: 2rem;
   margin-left: 2rem;
   margin-top: 2rem;
-  border: 1px solid red;
   height: 800px;
 }
 
@@ -43,8 +51,7 @@ export default {
   font-size: 2rem;
   font-weight: 600;
   line-height: 1.31;
-  width: 740px;
-  border: 1px solid red;
+  width: 100%;
 }
 
 img {
@@ -54,8 +61,5 @@ img {
 
 p {
   font-size: 13px;
-}
-.toY{
-  width: 100%;
 }
 </style>
