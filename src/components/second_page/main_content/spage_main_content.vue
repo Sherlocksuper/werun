@@ -3,17 +3,54 @@ import {mapState} from "vuex";
 
 export default {
   data() {
-    return {}
+    return {
+      text:
+          '# Hello world\n' +
+          '\n' +
+          '这是一段正文内容。\n' +
+          '\n' +
+          '## 代码块\n' +
+          '\n' +
+          '下面是一个示例的代码块：\n' +
+          '\n' +
+          '```javascript\n' +
+          'function sayHello() {\n' +
+          '  console.log("Hello world");\n' +
+          '}\n' +
+          '\n' +
+          'sayHello();\n' +
+          '```' +
+          '\n' +
+          '## 列表\n' +
+          '\n' +
+          '- 项目1\n' +
+          '- 项目2\n' +
+          '- 项目3\n' +
+          '\n' +
+          '## 引用\n' +
+          '\n' +
+          '> 这是一段引用的文本。\n' +
+          '\n' +
+          '## 链接\n' +
+          '\n' +
+          '这是一个链接 [OpenAI](https://openai.com/)。\n' +
+          '`'
+    }
   },
   props: {
     item: {
       type: Object,
       default: () => {
-        return {}
+        return {
+          title: 'title',
+          author: 'author',
+          date: 'date',
+          views: 'views',
+          content: 'content'
+        }
       }
     }
   },
-  methods: {},
 
   computed: {
     ...mapState(['windowWidth'])
@@ -33,6 +70,8 @@ export default {
       <div id="article_body">
         <p>{{ item.content }}</p>
       </div>
+
+      <v-md-editor :model-value="text" mode="preview"></v-md-editor>
     </article>
   </div>
 </template>
@@ -43,7 +82,7 @@ export default {
   margin-right: 2rem;
   margin-left: 2rem;
   margin-top: 2rem;
-  height: 800px;
+  height: fit-content;
 }
 
 .article_title {
@@ -62,4 +101,5 @@ img {
 p {
   font-size: 13px;
 }
+
 </style>

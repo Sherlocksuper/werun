@@ -6,14 +6,23 @@ import {createPinia} from 'pinia'
 import App from './App.vue'
 import router from './router'
 import "tailwindcss/tailwind.css"
-import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 import store from "/src/stores/store.js";
 
-const app = createApp(App)
+import VueMarkdownEditor from '@kangc/v-md-editor';
+import '@kangc/v-md-editor/lib/style/base-editor.css';
+import vuepressTheme from '@kangc/v-md-editor/lib/theme/vuepress.js';
+import '@kangc/v-md-editor/lib/theme/style/vuepress.css';
 
+import Prism from 'prismjs';
+
+VueMarkdownEditor.use(vuepressTheme, {
+    Prism,
+});
+
+
+const app = createApp(App)
 app.use(createPinia())
+app.use(VueMarkdownEditor)
 app.use(router)
 app.use(store)
-app.component('font-awesome-icon', FontAwesomeIcon)
-
 app.mount('#app')
